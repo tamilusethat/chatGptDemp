@@ -13,22 +13,17 @@ A complete full-stack expenses calculator built with:
 - Filter expenses by category and month
 - View filtered total and overall category-wise summary
 - REST API with validation and error handling
-- Local development setup (no Docker required)
+- Docker Compose setup for one-command startup
 
 ## Project Structure
 
 - `frontend/` - React UI
 - `backend/` - Express API + MongoDB models
+- `docker-compose.yml` - Full stack container setup
 
-## Local Setup
+## Local Setup (without Docker)
 
-### 1) Start MongoDB locally
-
-Make sure your local MongoDB server is running on:
-
-`mongodb://localhost:27017`
-
-### 2) Backend
+### 1) Backend
 
 ```bash
 cd backend
@@ -41,12 +36,12 @@ npm run dev
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/expenses_calculator
+MONGODB_URI=mongodb://127.0.0.1:27017/expenses_calculator
 CLIENT_ORIGIN=http://localhost:5173
 NODE_ENV=development
 ```
 
-### 3) Frontend
+### 2) Frontend
 
 ```bash
 cd frontend
@@ -64,6 +59,20 @@ Run frontend:
 ```bash
 npm run dev
 ```
+
+## Docker Setup (recommended)
+
+From project root:
+
+```bash
+docker compose up --build
+```
+
+Services:
+
+- Frontend: `http://localhost:5173`
+- Backend API: `http://localhost:5000/api`
+- MongoDB: `localhost:27017`
 
 ## API Endpoints
 
