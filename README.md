@@ -13,15 +13,14 @@ A complete full-stack expenses calculator built with:
 - Filter expenses by category and month
 - View filtered total and overall category-wise summary
 - REST API with validation and error handling
-- Docker Compose setup for frontend/backend services
+- Local development setup (no Docker required)
 
 ## Project Structure
 
 - `frontend/` - React UI
 - `backend/` - Express API + MongoDB models
-- `docker-compose.yml` - Frontend + backend container setup
 
-## Local Setup (without Docker)
+## Local Setup
 
 ### 1) Start MongoDB locally
 
@@ -65,21 +64,6 @@ Run frontend:
 ```bash
 npm run dev
 ```
-
-## Docker Setup (frontend + backend)
-
-From project root:
-
-```bash
-docker compose up --build
-```
-
-> This Docker setup expects MongoDB to be running locally on your host machine at `mongodb://localhost:27017`.
-
-Services:
-
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:5000/api`
 
 ## API Endpoints
 
